@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 322546093}
   - component: {fileID: 322546092}
+  - component: {fileID: 322546094}
   - component: {fileID: 322546091}
   - component: {fileID: 322546090}
   - component: {fileID: 322546089}
@@ -200,7 +201,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -208,9 +209,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &322546091
 MonoBehaviour:
@@ -219,14 +220,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322546088}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15b73c6658c0b5e4bbce3fe0672f3198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 322546090}
-  speed: 5
-  jumpForce: 7
+  speed: 3
+  jumpForce: 10
 --- !u!212 &322546092
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -297,6 +298,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &322546094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322546088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d172f7ff396a294a968ef0abdc7c2bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidbody2D: {fileID: 322546090}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  speed: 5
+  jumpForce: 20
+  maxJumpForce: 50
 --- !u!1 &479270022
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,7 +328,7 @@ GameObject:
   - component: {fileID: 479270025}
   - component: {fileID: 479270024}
   - component: {fileID: 479270026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -800,7 +820,7 @@ GameObject:
   - component: {fileID: 1734653874}
   - component: {fileID: 1734653873}
   - component: {fileID: 1734653875}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Platform
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -934,7 +954,7 @@ GameObject:
   - component: {fileID: 1922493173}
   - component: {fileID: 1922493172}
   - component: {fileID: 1922493174}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Platform (1)
   m_TagString: Platform
   m_Icon: {fileID: 0}
