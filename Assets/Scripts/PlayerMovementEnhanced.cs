@@ -76,7 +76,6 @@ public class PlayerMovementEnhanced : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Platform"))
         {
-            //checks contact surface.
             Vector3 normal = collision.contacts[0].normal;
             if (normal == Vector3.up)
             {
